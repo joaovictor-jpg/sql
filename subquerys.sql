@@ -1,0 +1,12 @@
+SELECT ID_CURSO, DATA_INICIO, DATA_TERMINO, LOGIN_CADASTRO FROM dbo.tb_turmas
+WHERE ID_CURSO = (SELECT ID_CURSO FROM dbo.tb_curso WHERE NOME_CURSO = 'Python');
+
+UPDATE dbo.tb_turmas SET LOGIN_CADASTRO = 'TesteUpdate' WHERE ID_CURSO = (SELECT ID_CURSO FROM dbo.tb_curso WHERE NOME_CURSO = 'C++');
+
+SELECT * FROM dbo.tb_turmas;
+
+DELETE dbo.tb_turmas WHERE ID_CURSO = (SELECT ID_CURSO FROM dbo.tb_curso WHERE NOME_CURSO = 'C#');
+
+SELECT * FROM dbo.tb_turmas T INNER JOIN dbo.tb_curso C ON C.ID_CURSO = T.ID_CURSO;
+
+SELECT * FROM dbo.tb_curso;
